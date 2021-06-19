@@ -11,7 +11,7 @@ function App() {
           console.log("Your choice: rock");
         }}
       >
-        <img style={{ width: "100%" }} src="/img/weapon/rock.png" alt="ROCK" />
+        <img style={{ width: "100%" }} src="/img/weapons/rock.png" alt="ROCK" />
       </button>
       {/* eslint-disable-next-line react/button-has-type */}
       <button
@@ -21,7 +21,7 @@ function App() {
       >
         <img
           style={{ width: "100%" }}
-          src="/img/weapon/paper.png"
+          src="/img/weapons/paper.png"
           alt="PAPER"
         />
       </button>
@@ -33,7 +33,7 @@ function App() {
       >
         <img
           style={{ width: "100%" }}
-          src="/img/weapon/scissors.png"
+          src="/img/weapons/scissors.png"
           alt="SCISSORS"
         />
       </button>
