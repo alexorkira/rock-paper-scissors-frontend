@@ -1,0 +1,12 @@
+.weapon-button {
+    border: none;
+    background-color: #262262;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    padding: inherit;
+    /* background-color: lightgray; */
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
