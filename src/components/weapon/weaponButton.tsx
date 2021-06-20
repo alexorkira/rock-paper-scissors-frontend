@@ -1,21 +1,26 @@
 import React from "react";
 import "./weapon.style.css";
+import axios from "axios";
 
 interface WeaponProps {
   weaponName: string;
 }
 
-const onClickWeapon = (id: string) => {
-  console.log("Selected weapon", { id });
-  // const url = `${process.env.REACT_APP_HOST}:${process.env.REACT_APP_SWITCHBOARD_GHOST_PORT}/switchboard-ghost/push-button`;
-  // axios
-  //   .post(url, {
-  //     columnIndex,
-  //   })
-  //   .then((res) => {
-  //     console.log(res);
-  //     console.log(res.data);
-  //   });
+const onWeaponClick = (weapon: string) => {
+  console.log("Selected weapon", { weapon });
+  const url = `${process.env.REACT_APP_HOST}:${process.env.REACT_APP_BACKEND_PORT}/the-winner-is`;
+  axios
+    .post(url, {
+      playerChoice: weapon,
+    })
+    .then((res) => {
+      const { playerChoice, computerChoice, winner } = res.data;
+      if (!winner) {
+        alert(`Draw!`);
+      } else {
+        alert(`Computer choice: ${computerChoice}\nWinner: ${winner}`);
+      }
+    });
 };
 
 const WeaponButton: React.FC<WeaponProps> = ({ weaponName }) => {
@@ -26,7 +31,7 @@ const WeaponButton: React.FC<WeaponProps> = ({ weaponName }) => {
       key={weaponName}
       className="weapon-button"
       type="button"
-      onClick={() => onClickWeapon(weaponName)}
+      onClick={() => onWeaponClick(weaponName)}
     >
       <img
         style={{ cursor: "pointer", width: "100%" }}
