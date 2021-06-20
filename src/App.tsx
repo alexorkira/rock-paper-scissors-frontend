@@ -1,42 +1,17 @@
 import React from "react";
 import "./App.css";
+import WeaponButton from "./components/weapon/weaponButton";
+import WeaponEnum from "./components/weapon/weapon.enum";
 
-function App() {
+function App(): React.ReactElement {
   return (
     <div className="App">
       <h1>Rock Paper Scissors</h1>
-      {/* eslint-disable-next-line react/button-has-type */}
-      <button
-        onClick={() => {
-          console.log("Your choice: rock");
-        }}
-      >
-        <img style={{ width: "100%" }} src="/img/weapons/rock.png" alt="ROCK" />
-      </button>
-      {/* eslint-disable-next-line react/button-has-type */}
-      <button
-        onClick={() => {
-          console.log("Your choice: paper");
-        }}
-      >
-        <img
-          style={{ width: "100%" }}
-          src="/img/weapons/paper.png"
-          alt="PAPER"
-        />
-      </button>
-      {/* eslint-disable-next-line react/button-has-type */}
-      <button
-        onClick={() => {
-          console.log("Your choice: scissors");
-        }}
-      >
-        <img
-          style={{ width: "100%" }}
-          src="/img/weapons/scissors.png"
-          alt="SCISSORS"
-        />
-      </button>
+      <div className="weaponPack">
+        {Object.values(WeaponEnum).map((weaponName) => {
+          return <WeaponButton key={weaponName} weaponName={weaponName} />;
+        })}
+      </div>
     </div>
   );
 }
