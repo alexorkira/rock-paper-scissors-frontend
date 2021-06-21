@@ -25,9 +25,16 @@
     right: 16px;
 }
 
-
 .header {
-    color: white;
-    background-color: #00BFFF;
     font-size: 2em;
+}
+
+.playerOne {
+    color: white;
+    background-color: #585E95;
+}
+
+.playerTwo {
+    color: white;
+    background-color: #2F6E73;
 }

@@ -7,6 +7,7 @@ export type MatchResultInfo = {
   firstWeapon: WeaponEnum;
   secondWeapon: WeaponEnum;
   result: string;
+  winner?: string;
 };
 
 const MatchResult: React.FC<{
@@ -14,7 +15,7 @@ const MatchResult: React.FC<{
   secondWeapon: WeaponEnum;
 }> = ({ firstWeapon, secondWeapon }) => {
   return (
-    <div className="" style={{ padding: "10" }}>
+    <div style={{ padding: "10" }}>
       <WeaponToken
         weaponName={secondWeapon}
         weaponImgPath={`/img/weapons/${secondWeapon}.png`}

@@ -3,28 +3,26 @@ import "./matchResultPopup.css";
 import MatchResult, { MatchResultInfo } from "./matchResult";
 
 export type MatchResultPopupProps = {
-  id?: string;
-  content: string | React.ReactNode;
   open: boolean;
   matchResult: MatchResultInfo;
   onClose: () => void;
 };
 
 const MatchResultPopup: React.FC<MatchResultPopupProps> = ({
-  content,
   open,
   matchResult,
   onClose,
 }) => {
-  const { firstWeapon, secondWeapon, result } = matchResult;
+  const { firstWeapon, secondWeapon, result, winner } = matchResult;
 
+  const headerClasses = `header ${winner}`;
   return (
     <div className="popup">
       <div className="popup-inner">
         <button type="button" className="close-btn" onClick={onClose}>
           close
         </button>
-        <div className="header">
+        <div className={headerClasses}>
           <h3>{result}</h3>
         </div>
         <MatchResult firstWeapon={firstWeapon} secondWeapon={secondWeapon} />
