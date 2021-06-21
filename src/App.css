@@ -1,4 +1,4 @@
-.App {
+.TheGame {
   text-align: center;
 }
 
@@ -11,6 +11,24 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.flex-item {
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+.fight-image {
+  height: 100px;
+  width: auto;
+  padding-bottom: 40px;
+  margin: 0px 30px;
 }
 
 .App-header {
