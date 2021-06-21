@@ -16,3 +16,9 @@
     width: 200px;
     margin: -15px;
 }
+
+/** Opponent Weapon style **/
+.flip { transform: scaleX(-1); }
+.grayscale { filter: grayscale(50%); }
+.brightness { filter: brightness(0.25); }
+.huerotate { filter: hue-rotate(300deg); }

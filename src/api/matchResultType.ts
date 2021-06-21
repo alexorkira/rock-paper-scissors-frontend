@@ -1,4 +1,4 @@
-import WeaponEnum from "./weapon.enum";
+import WeaponEnum from "../components/weapon/weapon.enum";
 
 export type MatchResultType = {
   playerOneWeapon: WeaponEnum;

@@ -3,9 +3,9 @@ import "./App.css";
 import axios, { AxiosResponse } from "axios";
 import WeaponEnum from "./components/weapon/weapon.enum";
 import WeaponButton from "./components/weapon/weaponButton";
-import MatchResultPopup from "./components/matchResultPopup";
-import { MatchResultInfo } from "./components/MatchResult";
-import { MatchResultType } from "./components/weapon/matchResultType";
+import MatchResultPopup from "./components/matchResult/matchResultPopup";
+import { MatchResultType } from "./api/matchResultType";
+import { MatchResultInfo } from "./components/matchResult/matchResult";
 
 function capitalizeFirstLetter(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);

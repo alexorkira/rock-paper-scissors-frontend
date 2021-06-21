@@ -4,19 +4,20 @@ import "./weapon.css";
 interface WeaponTokenProps {
   weaponName: string;
   weaponImgPath: string;
+  tokenStyle?: string;
 }
 
 const WeaponToken: React.FC<WeaponTokenProps> = ({
   weaponName,
   weaponImgPath,
+  tokenStyle,
 }) => {
-  return (
-    <img
-      className="weapon-token flex-item"
-      src={weaponImgPath}
-      alt={weaponName}
-    />
-  );
+  let classes = "weapon-token flex-item";
+  if (tokenStyle) {
+    classes += " flip grayscale brightness huerotate";
+  }
+
+  return <img className={classes} src={weaponImgPath} alt={weaponName} />;
 };
 
 export default WeaponToken;

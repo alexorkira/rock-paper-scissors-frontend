@@ -1,7 +1,7 @@
 import React from "react";
 import "./matchResultPopup.css";
-import WeaponToken from "./weapon/weaponToken";
-import WeaponEnum from "./weapon/weapon.enum";
+import WeaponToken from "../weapon/weaponToken";
+import WeaponEnum from "../weapon/weapon.enum";
 
 export type MatchResultInfo = {
   firstWeapon: WeaponEnum;
@@ -17,7 +17,8 @@ const MatchResult: React.FC<{
     <div className="" style={{ padding: "10" }}>
       <WeaponToken
         weaponName={secondWeapon}
-        weaponImgPath={`/img/weapons/${secondWeapon}-opponent.png`}
+        weaponImgPath={`/img/weapons/${secondWeapon}.png`}
+        tokenStyle="opponent"
       />
       <img className="fight-image flex-item" src="/img/vs-logo.png" alt="VS" />
       <WeaponToken
