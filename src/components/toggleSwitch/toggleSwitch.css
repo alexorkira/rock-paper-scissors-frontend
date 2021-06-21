@@ -1,84 +1,41 @@
-.toggle-switch {
+.toggle-container {
+    width: 300px;
+    background-color: #c4c4c4;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 3px;
+    padding: 2px;
+    height: 64px;
     position: relative;
-    width: 75px;
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    text-align: left;
-&-checkbox {
-     display: none;
- }
-&-label {
-     display: block;
-     overflow: hidden;
-     cursor: pointer;
-     border: 0 solid #bbb;
-     border-radius: 20px;
-     margin: 0;
- }
-&-inner {
-     display: block;
-     width: 200%;
-     margin-left: -100%;
-     transition: margin 0.3s ease-in 0s;
-&:before,
-&:after {
-     display: block;
-     float: left;
-     width: 50%;
-     height: 34px;
-     padding: 0;
-     line-height: 34px;
-     font-size: 14px;
-     color: white;
-     font-weight: bold;
-     box-sizing: border-box;
- }
-&:before {
-     content: "Yes";
-     text-transform: uppercase;
-     padding-left: 10px;
-     background-color: #f90;
-     color: #fff;
- }
 }
-&-disabled {
-     background-color: #ddd;
-     cursor: not-allowed;
-&:before {
-     background-color: #ddd;
-     cursor: not-allowed;
- }
+
+.dialog-button {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #585E95;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 18px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    min-width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 64px;
+    min-width: unset;
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    left: 152px;
+    transition: all 0.3s ease;
+    font-size: 1.3em;
 }
-&-inner:after {
-     content: "No";
-     text-transform: uppercase;
-     padding-right: 10px;
-     background-color: #bbb;
-     color: #fff;
-     text-align: right;
- }
-&-switch {
-     display: block;
-     width: 24px;
-     margin: 5px;
-     background: #fff;
-     position: absolute;
-     top: 0;
-     bottom: 0;
-     right: 40px;
-     border: 0 solid #bbb;
-     border-radius: 20px;
-     transition: all 0.3s ease-in 0s;
- }
-&-checkbox:checked + &-label {
-.toggle-switch-inner {
-    margin-left: 0;
-}
-.toggle-switch-switch {
-    right: 0px;
-}
-}
+
+.disabled {
+    background-color: #707070;
+    left: 2px;
 }

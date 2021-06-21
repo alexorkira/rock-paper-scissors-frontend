@@ -1,33 +1,28 @@
 import React from "react";
-import "./toggleSwitch/toggleSwitch.scss";
+import "./toggleSwitch.css";
 
-const ToggleSwitch: React.FC = () => {
-  // const { selected, toggleSelected } = this.props;
-  const selected = true;
+type ToggleSwitchProps = {
+  selected: boolean;
+  toggleSelected: () => void;
+};
 
+const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
+  selected,
+  toggleSelected,
+}) => {
   return (
-    <div className="toggle-container">
+    <div
+      tabIndex={0}
+      role="button"
+      className="toggle-container"
+      onClick={toggleSelected}
+      onKeyDown={toggleSelected}
+    >
       <div className={`dialog-button ${selected ? "" : "disabled"}`}>
-        {selected ? "YES" : "NO"}
+        {selected ? "P1" : "PC only"}
       </div>
     </div>
   );
-
-  // return (
-  //   <div className="toggle-switch">
-  //     <input
-  //       type="checkbox"
-  //       className="toggle-switch-checkbox"
-  //       name="toggleSwitch"
-  //       id="toggleSwitch"
-  //     />
-  //     {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-  //     <label className="toggle-switch-label" htmlFor="toggleSwitch">
-  //       <span className="toggle-switch-inner" />
-  //       <span className="toggle-switch-switch" />
-  //     </label>
-  //   </div>
-  // );
 };
 
 export default ToggleSwitch;
