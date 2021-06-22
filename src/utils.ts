@@ -15,7 +15,7 @@ export function customizeMessage(
           : "Ehm, sorry... you lost the match";
     }
   } else if (winner) {
-    result = winner === "playerOne" ? "COM1 wins!!" : "COM2 defeated COM1";
+    result = winner === "playerOne" ? "COM2 wins!!" : "COM1 defeated COM2";
   }
   return result;
 }

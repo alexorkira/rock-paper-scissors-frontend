@@ -1,31 +1,53 @@
 import React from "react";
-import "./matchResultPopup.css";
+import "./matchResult.css";
 import WeaponToken from "../weapon/weaponToken";
-import WeaponEnum from "../weapon/weapon.enum";
 
-export type MatchResultInfo = {
-  firstWeapon: WeaponEnum;
-  secondWeapon: WeaponEnum;
-  result: string;
-  winner?: string;
+import { MatchResultType } from "../../api/matchResultType";
+
+export type MatchResultPopupProps = {
+  matchResult: MatchResultType;
 };
 
-const MatchResult: React.FC<{
-  firstWeapon: WeaponEnum;
-  secondWeapon: WeaponEnum;
-}> = ({ firstWeapon, secondWeapon }) => {
+const MatchResult: React.FC<MatchResultPopupProps> = ({ matchResult }) => {
+  const { playerOne, playerTwo, result, winner } = matchResult;
+
+  const headerClasses = `header ${winner}`;
+
   return (
-    <div style={{ padding: "10" }}>
-      <WeaponToken
-        weaponName={secondWeapon}
-        weaponImgPath={`/img/weapons/${secondWeapon}.png`}
-        tokenStyle="opponent"
-      />
-      <img className="fight-image flex-item" src="/img/vs-logo.png" alt="VS" />
-      <WeaponToken
-        weaponName={firstWeapon}
-        weaponImgPath={`/img/weapons/${firstWeapon}.png`}
-      />
+    <div>
+      <div className={headerClasses}>
+        <h3>{result}</h3>
+      </div>
+      <div className="result-container" style={{ padding: "10" }}>
+        <figure className="token-figure">
+          <div className="position-left">
+            <WeaponToken
+              weaponName={playerTwo.weapon}
+              weaponImgPath={`/img/weapons/${playerTwo.weapon}.png`}
+              tokenStyle="opponent left"
+            />
+            <figcaption className="playerTwo-stroke-color">
+              {playerTwo.name}
+            </figcaption>
+          </div>
+        </figure>
+        <img
+          className="fight-image flex-item"
+          src="/img/vs-logo.png"
+          alt="VS"
+        />
+        <figure className="token-figure">
+          <div className="position-right">
+            <WeaponToken
+              weaponName={playerOne.weapon}
+              weaponImgPath={`/img/weapons/${playerOne.weapon}.png`}
+            />
+            <figcaption className="playerOne-stroke-color">
+              {playerOne.name}
+            </figcaption>
+          </div>
+        </figure>
+      </div>
     </div>
   );
 };

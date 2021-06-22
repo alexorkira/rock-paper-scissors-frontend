@@ -1,0 +1,98 @@
+.popup {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-inner {
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+    background-color: #FFF;
+}
+
+.popup-inner .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.header {
+    font-size: 2em;
+}
+
+.playerOne {
+    color: white;
+    background-color: #585E95;
+}
+
+.playerTwo {
+    color: white;
+    background-color: #2F6E73;
+}
+
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.result-container>.token-figure {
+    flex: 1 1 20%;
+    margin: 5px;
+    height: 50px;
+}
+
+.token-figure {
+    position: relative;
+    left: 0px;
+}
+
+.token-figure> .position-left {
+    position:absolute;
+    right:50px;
+}
+
+.token-figure> .position-right {
+    position:absolute;
+    left:50px;
+}
+
+
+.fight-image {
+    height: 100px;
+    width: auto;
+    padding-top: 40px;
+    margin: 0px 30px;
+}
+
+
+figcaption {
+    padding-top: 15px;
+    font-size: 2.5em;
+    /*font-family: Impact, fantasy;*/
+    /*font-family: OCR A Std, monospace;*/
+    font-weight: 900;
+    /*text-shadow: 0 0 5px #003444;*/
+}
+
+.playerOne-stroke-color {
+    color: #585E95;
+    text-shadow: #262262 3px 0px 0px, #262262 2.83487px 0.981584px 0px, #262262 2.35766px 1.85511px 0px, #262262 1.62091px 2.52441px 0px, #262262 0.705713px 2.91581px 0px, #262262 -0.287171px 2.98622px 0px, #262262 -1.24844px 2.72789px 0px, #262262 -2.07227px 2.16926px 0px, #262262 -2.66798px 1.37182px 0px, #262262 -2.96998px 0.42336px 0px, #262262 -2.94502px -0.571704px 0px, #262262 -2.59586px -1.50383px 0px, #262262 -1.96093px -2.27041px 0px, #262262 -1.11013px -2.78704px 0px, #262262 -0.137119px -2.99686px 0px, #262262 0.850987px -2.87677px 0px, #262262 1.74541px -2.43999px 0px, #262262 2.44769px -1.73459px 0px, #262262 2.88051px -0.838247px 0px;
+}
+
+.playerTwo-stroke-color {
+    color: #2F6E73;
+    text-shadow: #003443 3px 0px 0px, #003443 2.83487px 0.981584px 0px, #003443 2.35766px 1.85511px 0px, #003443 1.62091px 2.52441px 0px, #003443 0.705713px 2.91581px 0px, #003443 -0.287171px 2.98622px 0px, #003443 -1.24844px 2.72789px 0px, #003443 -2.07227px 2.16926px 0px, #003443 -2.66798px 1.37182px 0px, #003443 -2.96998px 0.42336px 0px, #003443 -2.94502px -0.571704px 0px, #003443 -2.59586px -1.50383px 0px, #003443 -1.96093px -2.27041px 0px, #003443 -1.11013px -2.78704px 0px, #003443 -0.137119px -2.99686px 0px, #003443 0.850987px -2.87677px 0px, #003443 1.74541px -2.43999px 0px, #003443 2.44769px -1.73459px 0px, #003443 2.88051px -0.838247px 0px;
+}
+
+
+

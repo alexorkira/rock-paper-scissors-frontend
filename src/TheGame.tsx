@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./TheGame.css";
 import axios, { AxiosResponse } from "axios";
 import WeaponEnum from "./components/weapon/weapon.enum";
-import WeaponButton from "./components/weapon/weaponButton";
-import MatchResultPopup from "./components/matchResult/matchResultPopup";
-import ToggleSwitch from "./components/toggleSwitch/toggleSwitch";
 import { MatchResultType } from "./api/matchResultType";
-import { MatchResultInfo } from "./components/matchResult/matchResult";
+import WeaponButton from "./components/weapon/weaponButton";
+import MatchResult from "./components/matchResult/matchResult";
+import ToggleSwitch from "./components/toggleSwitch/toggleSwitch";
 import { capitalizeFirstLetter, customizeMessage } from "./utils";
+import "./components/matchResult/matchResult.css";
 
 const BACKEND_URL = `${process.env.REACT_APP_HOST}:${process.env.REACT_APP_BACKEND_PORT}`;
 
@@ -17,18 +17,18 @@ function TheGame(): React.ReactElement {
     setOpen(false);
   };
 
-  const [matchResult, setMatchResult] = useState<MatchResultInfo>();
+  const [matchResult, setMatchResult] = useState<MatchResultType>();
 
   const [selected, setSelected] = useState(true);
 
   const onReceiveReply = (receivedData: MatchResultType) => {
-    const { playerOneWeapon, playerTwoWeapon, winner } = receivedData;
+    const { playerOne, playerTwo, winner } = receivedData;
 
     const result = customizeMessage(selected, winner);
 
     setMatchResult({
-      firstWeapon: playerOneWeapon,
-      secondWeapon: playerTwoWeapon,
+      playerOne,
+      playerTwo,
       result,
       winner,
     });
@@ -65,6 +65,7 @@ function TheGame(): React.ReactElement {
         selected={selected}
         toggleSelected={() => {
           setSelected(!selected);
+          onClose();
         }}
       />
       {selected && (
@@ -82,19 +83,16 @@ function TheGame(): React.ReactElement {
         </div>
       )}
       {!selected && (
-        <div className="">
-          <button
-            key="let-computer-fight"
-            type="button"
-            onClick={onPcPlayOnlyClick}
-          >
-            Let the Computers fight
-          </button>
-        </div>
+        <button
+          className="pc-only"
+          key="let-computer-fight"
+          type="button"
+          onClick={onPcPlayOnlyClick}
+        >
+          Let the Computers fight
+        </button>
       )}
-      {open && matchResult && (
-        <MatchResultPopup open matchResult={matchResult} onClose={onClose} />
-      )}
+      {open && matchResult && <MatchResult matchResult={matchResult} />}
     </div>
   );
 }

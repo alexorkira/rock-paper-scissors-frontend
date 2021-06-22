@@ -1,7 +1,8 @@
-import WeaponEnum from "../components/weapon/weapon.enum";
+import { PlayerType } from "./playerType";
 
 export type MatchResultType = {
-  playerOneWeapon: WeaponEnum;
-  playerTwoWeapon: WeaponEnum;
+  playerOne: PlayerType;
+  playerTwo: PlayerType;
   winner?: string;
+  result?: string;
 };
