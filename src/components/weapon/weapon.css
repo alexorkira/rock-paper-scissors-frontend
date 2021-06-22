@@ -5,16 +5,16 @@
     padding: inherit;
     cursor: pointer;
     margin: 0px 25px;
-    /* background-color: lightgray; */
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
 }
 
 .weapon-token {
     height: 200px;
     width: 200px;
     margin: -15px;
+}
+
+.weapon-token:active {
+    padding: 4px 0px 0px;
 }
 
 /** Opponent Weapon style **/

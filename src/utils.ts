@@ -6,16 +6,13 @@ export function customizeMessage(
   playerMode: boolean,
   winner: string | undefined
 ) {
-  let result = "It's a draw";
-  if (playerMode) {
-    if (winner) {
-      result =
-        winner === "playerOne"
-          ? "Congrats! You won!"
-          : "Ehm, sorry... you lost the match";
+  if (winner) {
+    if (playerMode) {
+      return winner === "playerOne"
+        ? "Congrats! You win!"
+        : "Sorry... you lose";
     }
-  } else if (winner) {
-    result = winner === "playerOne" ? "COM2 wins!!" : "COM1 defeated COM2";
+    return winner === "playerOne" ? "COM2 wins!!" : "COM1 defeats COM2";
   }
-  return result;
+  return "It's a draw";
 }

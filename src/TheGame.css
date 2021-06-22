@@ -23,6 +23,22 @@
   text-align: center;
 }
 
+.pc-only {
+  height: 100px;
+  width: 400px;
+  margin: -15px;
+  cursor: pointer;
+  /*border: 4px solid black;*/
+  color: white;
+  border-radius: 15px;
+  background-color: #707070;
+}
+
+.pc-only:active {
+  vertical-align: top;
+  padding: 8px 13px 6px;
+}
+
 
 .App-header {
   background-color: #282c34;

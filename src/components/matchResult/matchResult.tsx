@@ -9,14 +9,12 @@ export type MatchResultPopupProps = {
 };
 
 const MatchResult: React.FC<MatchResultPopupProps> = ({ matchResult }) => {
-  const { playerOne, playerTwo, result, winner } = matchResult;
-
-  const headerClasses = `header ${winner}`;
+  const { playerOne, playerTwo, resultSentence } = matchResult;
 
   return (
-    <div>
-      <div className={headerClasses}>
-        <h3>{result}</h3>
+    <div className="result-box">
+      <div className="result-header">
+        <h3>{resultSentence}</h3>
       </div>
       <div className="result-container" style={{ padding: "10" }}>
         <figure className="token-figure">

@@ -25,7 +25,7 @@
     right: 16px;
 }
 
-.header {
+.result-header {
     font-size: 2em;
 }
 
@@ -37,6 +37,15 @@
 .playerTwo {
     color: white;
     background-color: #2F6E73;
+}
+
+.result-box {
+    margin: 50px 50px;
+    border: 5px solid;
+    border-radius: 30px;
+    height: 450px;
+    transition: 0.5s;
+    overflow: hidden;
 }
 
 .result-container {

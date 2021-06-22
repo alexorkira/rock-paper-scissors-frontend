@@ -7,7 +7,6 @@ import WeaponButton from "./components/weapon/weaponButton";
 import MatchResult from "./components/matchResult/matchResult";
 import ToggleSwitch from "./components/toggleSwitch/toggleSwitch";
 import { capitalizeFirstLetter, customizeMessage } from "./utils";
-import "./components/matchResult/matchResult.css";
 
 const BACKEND_URL = `${process.env.REACT_APP_HOST}:${process.env.REACT_APP_BACKEND_PORT}`;
 
@@ -19,18 +18,17 @@ function TheGame(): React.ReactElement {
 
   const [matchResult, setMatchResult] = useState<MatchResultType>();
 
-  const [selected, setSelected] = useState(true);
+  const [playerMode, setPlayerMode] = useState(true);
 
   const onReceiveReply = (receivedData: MatchResultType) => {
     const { playerOne, playerTwo, winner } = receivedData;
 
-    const result = customizeMessage(selected, winner);
+    const resultSentence = customizeMessage(playerMode, winner);
 
     setMatchResult({
       playerOne,
       playerTwo,
-      result,
-      winner,
+      resultSentence,
     });
 
     setOpen(true);
@@ -62,13 +60,13 @@ function TheGame(): React.ReactElement {
         })}
       </h1>
       <ToggleSwitch
-        selected={selected}
+        selected={playerMode}
         toggleSelected={() => {
-          setSelected(!selected);
+          setPlayerMode(!playerMode);
           onClose();
         }}
       />
-      {selected && (
+      {(playerMode && (
         <div className="weaponPack">
           <h2 style={{ fontSize: "2em" }}>Make your choice</h2>
           {Object.values(WeaponEnum).map((weaponName) => {
@@ -81,15 +79,14 @@ function TheGame(): React.ReactElement {
             );
           })}
         </div>
-      )}
-      {!selected && (
+      )) || (
         <button
           className="pc-only"
           key="let-computer-fight"
           type="button"
           onClick={onPcPlayOnlyClick}
         >
-          Let the Computers fight
+          <h2>Let the Computer fights</h2>
         </button>
       )}
       {open && matchResult && <MatchResult matchResult={matchResult} />}
