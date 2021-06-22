@@ -39,3 +39,12 @@
     background-color: #707070;
     left: 2px;
 }
+
+.game-mode {
+    text-align: left;
+    padding: 0px 0px 5px 12px;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 1.0em;
+}
+
