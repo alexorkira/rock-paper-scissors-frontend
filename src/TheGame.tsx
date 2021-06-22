@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./TheGame.css";
 import axios, { AxiosResponse } from "axios";
 import WeaponEnum from "./components/weapon/weapon.enum";
