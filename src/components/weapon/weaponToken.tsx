@@ -1,11 +1,11 @@
 import React from "react";
 import "./weapon.css";
 
-interface WeaponTokenProps {
+type WeaponTokenProps = {
   weaponName: string;
   weaponImgPath: string;
   tokenStyle?: string;
-}
+};
 
 const WeaponToken: React.FC<WeaponTokenProps> = ({
   weaponName,

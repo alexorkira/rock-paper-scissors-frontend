@@ -2,9 +2,9 @@ import React from "react";
 import "./matchResult.css";
 import WeaponToken from "../weapon/weaponToken";
 
-import { MatchResultType } from "../../api/matchResultType";
+import { MatchResultType } from "./matchResultType";
 
-export type MatchResultPopupProps = {
+type MatchResultPopupProps = {
   matchResult: MatchResultType;
 };
 

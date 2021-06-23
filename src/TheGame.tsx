@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./TheGame.css";
 import axios, { AxiosResponse } from "axios";
 import WeaponEnum from "./components/weapon/weapon.enum";
-import { MatchResultType } from "./api/matchResultType";
+import { MatchResultType } from "./components/matchResult/matchResultType";
 import WeaponButton from "./components/weapon/weaponButton";
 import MatchResult from "./components/matchResult/matchResult";
 import ToggleSwitch from "./components/toggleSwitch/toggleSwitch";

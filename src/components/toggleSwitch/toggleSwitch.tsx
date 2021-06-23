@@ -23,7 +23,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
         <div className={`dialog-button ${selected ? "" : "disabled"}`}>
           {selected ? "P1" : "PC only"}
         </div>
-      </div>{" "}
+      </div>
     </div>
   );
 };
